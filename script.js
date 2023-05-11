@@ -1,11 +1,11 @@
-console.log(
-  fetch("https://eldenring.fanapis.com/api/ammos?limit=100", {
-    method: "GET",
-  })
-);
-
-const searchButton = document.querySelector("#searchButton");
-searchButton.addEventListener("click", () => getAmmos());
+//console.log(
+//  fetch("https://eldenring.fanapis.com/api/ammos?limit=100", {
+//    method: "GET",
+//  })
+//);
+//
+//const searchButton = document.querySelector("#searchButton");
+//searchButton.addEventListener("click", () => getAmmos());
 
 async function getAmmos() {
   const ammos = await fetch(
@@ -25,7 +25,7 @@ console.log(getAmmos());
 
 async function getWeapons() {
   const weapons = await fetch(
-    "https://eldenring.fanapis.com/api/weapons?limit=200",
+    "https://eldenring.fanapis.com/api/weapons?limit=101",
     {
       method: "GET",
     }
@@ -33,8 +33,12 @@ async function getWeapons() {
 
   const json = await weapons.json();
   const weaponsArray = json.data;
-  console.log(weaponsArray);
-  return weaponsArray;
+  console.log(weaponsArray[0].image);
+
+  const homeWeaponThumbnail = document.getElementById("homeWeaponThumbnail");
+  let weaponThumb = document.createElement("img");
+  weaponThumb.src = weaponsArray[0].image;
+  homeWeaponThumbnail.append(weaponThumb);
 }
 
 console.log(getWeapons());
