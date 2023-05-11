@@ -25,7 +25,7 @@ console.log(getAmmos());
 
 async function getWeapons() {
   const weapons = await fetch(
-    "https://eldenring.fanapis.com/api/weapons?limit=101",
+    "https://eldenring.fanapis.com/api/weapons?limit=100",
     {
       method: "GET",
     }
@@ -33,12 +33,12 @@ async function getWeapons() {
 
   const json = await weapons.json();
   const weaponsArray = json.data;
-  console.log(weaponsArray[0].image);
-
-  const homeWeaponThumbnail = document.getElementById("homeWeaponThumbnail");
-  let weaponThumb = document.createElement("img");
-  weaponThumb.src = weaponsArray[0].image;
-  homeWeaponThumbnail.append(weaponThumb);
+  console.log(weaponsArray[4].image);
+  //appending thumbnail
+  const weaponThumb = document.getElementById("weaponThumb");
+  let weaponImg = document.createElement("img");
+  weaponImg.src = weaponsArray[4].image;
+  weaponThumb.append(weaponImg);
 }
 
 console.log(getWeapons());
@@ -53,7 +53,12 @@ async function getSorceries() {
 
   const json = await sorceries.json();
   const sorceriesArray = json.data;
-  console.log(sorceriesArray);
+  console.log(sorceriesArray[3].image);
+  //appending thumbnail
+  const sorceryThumb = document.getElementById("sorceryThumb");
+  let sorceryImg = document.createElement("img");
+  sorceryImg.src = sorceriesArray[3].image;
+  sorceryThumb.append(sorceryImg);
 }
 
 console.log(getSorceries());
@@ -69,6 +74,11 @@ async function getIncantations() {
   const json = await incantations.json();
   const incantationsArray = json.data;
   console.log(incantationsArray);
+  //appending thumbnail
+  const incantationThumb = document.getElementById("incantationThumb");
+  let incantationImg = document.createElement("img");
+  incantationImg.src = incantationsArray[3].image;
+  incantationThumb.append(incantationImg);
 }
 
 console.log(getIncantations());
