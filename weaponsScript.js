@@ -16,16 +16,19 @@ async function getWeapons1() {
       weaponUrl.href = `https://eldenring.wiki.fextralife.com/${nameData}`;
       thumbnailBox.append(weaponUrl);
 
-      const weaponContainer = document.createElement("container");
+      const itemContainer = document.createElement("container");
+      itemContainer.className = "itemContainer";
 
       let weaponImg = document.createElement("img");
       weaponImg.src = array[i].image;
-      weaponContainer.append(weaponImg);
+      itemContainer.append(weaponImg);
       let weaponName = document.createElement("p");
-      weaponName = array[i].name;
-      weaponContainer.append(weaponName);
+      weaponName.className = "itemLabel";
 
-      weaponUrl.append(weaponContainer);
+      weaponName = array[i].name;
+      itemContainer.append(weaponName);
+
+      weaponUrl.append(itemContainer);
     }
   }
   async function getWeapons2() {
@@ -41,8 +44,9 @@ async function getWeapons1() {
 
     function getWeapons(array) {
       for (let i = 0; i < array.length; i++) {
+        const nameData = array[i].name.replace(" ", "+");
         let weaponUrl = document.createElement("a");
-        weaponUrl.href = "http://example.com";
+        weaponUrl.href = `https://eldenring.wiki.fextralife.com/${nameData}`;
         thumbnailBox.append(weaponUrl);
 
         const weaponContainer = document.createElement("container");
@@ -71,8 +75,9 @@ async function getWeapons1() {
 
       function getWeapons(array) {
         for (let i = 0; i < array.length; i++) {
+          const nameData = array[i].name.replace(" ", "+");
           let weaponUrl = document.createElement("a");
-          weaponUrl.href = "http://example.com";
+          weaponUrl.href = `https://eldenring.wiki.fextralife.com/${nameData}`;
           thumbnailBox.append(weaponUrl);
 
           const weaponContainer = document.createElement("container");
@@ -101,9 +106,9 @@ async function getWeapons1() {
 
         function getWeapons(array) {
           for (let i = 0; i < array.length; i++) {
+            const nameData = array[i].name.replace(" ", "+");
             let weaponUrl = document.createElement("a");
-            weaponUrl.href =
-              "https://eldenring.wiki.fextralife.com/Ripple+Blade";
+            weaponUrl.href = `https://eldenring.wiki.fextralife.com/${nameData}`;
             thumbnailBox.append(weaponUrl);
 
             const weaponContainer = document.createElement("container");
