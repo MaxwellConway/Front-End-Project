@@ -49,16 +49,19 @@ async function getWeapons1() {
         weaponUrl.href = `https://eldenring.wiki.fextralife.com/${nameData}`;
         thumbnailBox.append(weaponUrl);
 
-        const weaponContainer = document.createElement("container");
+        const itemContainer = document.createElement("container");
+        itemContainer.className = "itemContainer";
 
         let weaponImg = document.createElement("img");
         weaponImg.src = array[i].image;
-        weaponContainer.append(weaponImg);
+        itemContainer.append(weaponImg);
         let weaponName = document.createElement("p");
-        weaponName = array[i].name;
-        weaponContainer.append(weaponName);
+        weaponName.className = "itemLabel";
 
-        weaponUrl.append(weaponContainer);
+        weaponName = array[i].name;
+        itemContainer.append(weaponName);
+
+        weaponUrl.append(itemContainer);
       }
     }
     getWeapons(weaponsArray);
@@ -80,16 +83,19 @@ async function getWeapons1() {
           weaponUrl.href = `https://eldenring.wiki.fextralife.com/${nameData}`;
           thumbnailBox.append(weaponUrl);
 
-          const weaponContainer = document.createElement("container");
+          const itemContainer = document.createElement("container");
+          itemContainer.className = "itemContainer";
 
           let weaponImg = document.createElement("img");
           weaponImg.src = array[i].image;
-          weaponContainer.append(weaponImg);
+          itemContainer.append(weaponImg);
           let weaponName = document.createElement("p");
-          weaponName = array[i].name;
-          weaponContainer.append(weaponName);
+          weaponName.className = "itemLabel";
 
-          weaponUrl.append(weaponContainer);
+          weaponName = array[i].name;
+          itemContainer.append(weaponName);
+
+          weaponUrl.append(itemContainer);
         }
       }
       getWeapons(weaponsArray);
@@ -111,16 +117,19 @@ async function getWeapons1() {
             weaponUrl.href = `https://eldenring.wiki.fextralife.com/${nameData}`;
             thumbnailBox.append(weaponUrl);
 
-            const weaponContainer = document.createElement("container");
+            const itemContainer = document.createElement("container");
+            itemContainer.className = "itemContainer";
 
             let weaponImg = document.createElement("img");
             weaponImg.src = array[i].image;
-            weaponContainer.append(weaponImg);
+            itemContainer.append(weaponImg);
             let weaponName = document.createElement("p");
-            weaponName = array[i].name;
-            weaponContainer.append(weaponName);
+            weaponName.className = "itemLabel";
 
-            weaponUrl.append(weaponContainer);
+            weaponName = array[i].name;
+            itemContainer.append(weaponName);
+
+            weaponUrl.append(itemContainer);
           }
         }
         getWeapons(weaponsArray);
@@ -137,3 +146,23 @@ async function getWeapons1() {
 }
 
 console.log(getWeapons1());
+
+function myFunction() {
+  // Declare variables
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName("li");
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
