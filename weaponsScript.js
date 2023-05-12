@@ -137,8 +137,158 @@ async function getWeapons0() {
           }
         }
         getWeapons(weaponsArray);
+        async function getWeapons4() {
+          const weapons = await fetch(
+            "https://eldenring.fanapis.com/api/weapons?limit=100&page=3",
+            {
+              method: "GET",
+            }
+          );
 
-        console.log(getWeapons3());
+          const json = await weapons.json();
+          const weaponsArray = json.data;
+
+          function getWeapons(array) {
+            for (let i = 0; i < array.length; i++) {
+              const nameData = array[i].name.replace(" ", "+");
+              let weaponUrl = document.createElement("a");
+              weaponUrl.href = `https://eldenring.wiki.fextralife.com/${nameData}`;
+              thumbnailBox.append(weaponUrl);
+              weaponUrl.className = `filterDiv ${array[i].category} show`;
+
+              const itemContainer = document.createElement("container");
+              itemContainer.className = "itemContainer";
+
+              let weaponImg = document.createElement("img");
+              weaponImg.src = array[i].image;
+              itemContainer.append(weaponImg);
+              let weaponName = document.createElement("p");
+              weaponName.className = "itemLabel";
+
+              weaponName = array[i].name;
+              itemContainer.append(weaponName);
+
+              weaponUrl.append(itemContainer);
+            }
+          }
+          getWeapons(weaponsArray);
+          async function getWeapons5() {
+            const weapons = await fetch(
+              "https://eldenring.fanapis.com/api/weapons?limit=100&page=2",
+              {
+                method: "GET",
+              }
+            );
+
+            const json = await weapons.json();
+            const weaponsArray = json.data;
+
+            function getWeapons(array) {
+              for (let i = 0; i < array.length; i++) {
+                const nameData = array[i].name.replace(" ", "+");
+                let weaponUrl = document.createElement("a");
+                weaponUrl.href = `https://eldenring.wiki.fextralife.com/${nameData}`;
+                thumbnailBox.append(weaponUrl);
+                weaponUrl.className = `filterDiv ${array[i].category} show`;
+
+                const itemContainer = document.createElement("container");
+                itemContainer.className = "itemContainer";
+
+                let weaponImg = document.createElement("img");
+                weaponImg.src = array[i].image;
+                itemContainer.append(weaponImg);
+                let weaponName = document.createElement("p");
+                weaponName.className = "itemLabel";
+
+                weaponName = array[i].name;
+                itemContainer.append(weaponName);
+
+                weaponUrl.append(itemContainer);
+              }
+            }
+            getWeapons(weaponsArray);
+            async function getWeapons6() {
+              const weapons = await fetch(
+                "https://eldenring.fanapis.com/api/weapons?limit=100&page=1",
+                {
+                  method: "GET",
+                }
+              );
+
+              const json = await weapons.json();
+              const weaponsArray = json.data;
+
+              function getWeapons(array) {
+                for (let i = 0; i < array.length; i++) {
+                  const nameData = array[i].name.replace(" ", "+");
+                  let weaponUrl = document.createElement("a");
+                  weaponUrl.href = `https://eldenring.wiki.fextralife.com/${nameData}`;
+                  thumbnailBox.append(weaponUrl);
+                  weaponUrl.className = `filterDiv ${array[i].category} show`;
+
+                  const itemContainer = document.createElement("container");
+                  itemContainer.className = "itemContainer";
+
+                  let weaponImg = document.createElement("img");
+                  weaponImg.src = array[i].image;
+                  itemContainer.append(weaponImg);
+                  let weaponName = document.createElement("p");
+                  weaponName.className = "itemLabel";
+
+                  weaponName = array[i].name;
+                  itemContainer.append(weaponName);
+
+                  weaponUrl.append(itemContainer);
+                }
+              }
+              getWeapons(weaponsArray);
+              async function getWeapons7() {
+                const weapons = await fetch(
+                  "https://eldenring.fanapis.com/api/weapons?limit=100&page=0",
+                  {
+                    method: "GET",
+                  }
+                );
+
+                const json = await weapons.json();
+                const weaponsArray = json.data;
+
+                function getWeapons(array) {
+                  for (let i = 0; i < array.length; i++) {
+                    const nameData = array[i].name.replace(" ", "+");
+                    let weaponUrl = document.createElement("a");
+                    weaponUrl.href = `https://eldenring.wiki.fextralife.com/${nameData}`;
+                    thumbnailBox.append(weaponUrl);
+                    weaponUrl.className = `filterDiv ${array[i].category} show`;
+
+                    const itemContainer = document.createElement("container");
+                    itemContainer.className = "itemContainer";
+
+                    let weaponImg = document.createElement("img");
+                    weaponImg.src = array[i].image;
+                    itemContainer.append(weaponImg);
+                    let weaponName = document.createElement("p");
+                    weaponName.className = "itemLabel";
+
+                    weaponName = array[i].name;
+                    itemContainer.append(weaponName);
+
+                    weaponUrl.append(itemContainer);
+                  }
+                }
+                getWeapons(weaponsArray);
+              }
+
+              console.log(getWeapons7());
+            }
+
+            console.log(getWeapons6());
+          }
+
+          console.log(getWeapons5());
+        }
+
+        console.log(getWeapons4());
       }
 
       console.log(getWeapons3());
