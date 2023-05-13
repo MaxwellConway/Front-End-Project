@@ -1,15 +1,15 @@
-async function getWeapons0() {
-  const weapons = await fetch(
-    "https://eldenring.fanapis.com/api/weapons?limit=100&page=0",
+async function getSorceries0() {
+  const sorceries = await fetch(
+    "https://eldenring.fanapis.com/api/sorceries?limit=100&page=0",
     {
       method: "GET",
     }
   );
 
-  const json = await weapons.json();
-  const weaponsArray = json.data;
+  const json = await sorceries.json();
+  const sorceriesArray = json.data;
 
-  function getWeapons(array) {
+  function getSorceries(array) {
     for (let i = 0; i < array.length; i++) {
       const nameData = array[i].name.replace(" ", "+");
       let weaponUrl = document.createElement("a");
@@ -32,18 +32,18 @@ async function getWeapons0() {
       weaponUrl.append(itemContainer);
     }
   }
-  async function getWeapons1() {
-    const weapons = await fetch(
-      "https://eldenring.fanapis.com/api/weapons?limit=100&page=1",
+  async function getSorceries1() {
+    const sorceries = await fetch(
+      "https://eldenring.fanapis.com/api/sorceries?limit=100&page=1",
       {
         method: "GET",
       }
     );
 
-    const json = await weapons.json();
-    const weaponsArray = json.data;
+    const json = await sorceries.json();
+    const sorceriesArray = json.data;
 
-    function getWeapons(array) {
+    function getSorceries(array) {
       for (let i = 0; i < array.length; i++) {
         const nameData = array[i].name.replace(" ", "+");
         let weaponUrl = document.createElement("a");
@@ -66,19 +66,19 @@ async function getWeapons0() {
         weaponUrl.append(itemContainer);
       }
     }
-    getWeapons(weaponsArray);
-    async function getWeapons2() {
-      const weapons = await fetch(
-        "https://eldenring.fanapis.com/api/weapons?limit=100&page=2",
+    getSorceries(sorceriesArray);
+    async function getSorceries2() {
+      const sorceries = await fetch(
+        "https://eldenring.fanapis.com/api/sorceries?limit=100&page=2",
         {
           method: "GET",
         }
       );
 
-      const json = await weapons.json();
-      const weaponsArray = json.data;
+      const json = await sorceries.json();
+      const sorceriesArray = json.data;
 
-      function getWeapons(array) {
+      function getSorceries(array) {
         for (let i = 0; i < array.length; i++) {
           const nameData = array[i].name.replace(" ", "+");
           let weaponUrl = document.createElement("a");
@@ -101,19 +101,19 @@ async function getWeapons0() {
           weaponUrl.append(itemContainer);
         }
       }
-      getWeapons(weaponsArray);
-      async function getWeapons3() {
-        const weapons = await fetch(
-          "https://eldenring.fanapis.com/api/weapons?limit=100&page=3",
+      getSorceries(sorceriesArray);
+      async function getSorceries3() {
+        const sorceries = await fetch(
+          "https://eldenring.fanapis.com/api/sorceries?limit=100&page=3",
           {
             method: "GET",
           }
         );
 
-        const json = await weapons.json();
-        const weaponsArray = json.data;
+        const json = await sorceries.json();
+        const sorceriesArray = json.data;
 
-        function getWeapons(array) {
+        function getSorceries(array) {
           for (let i = 0; i < array.length; i++) {
             const nameData = array[i].name.replace(" ", "+");
             let weaponUrl = document.createElement("a");
@@ -136,7 +136,7 @@ async function getWeapons0() {
             weaponUrl.append(itemContainer);
           }
         }
-        getWeapons(weaponsArray);
+        getSorceries(sorceriesArray);
 
         function click() {
           document.getElementById("showAll").click();
@@ -145,17 +145,17 @@ async function getWeapons0() {
         click();
       }
 
-      console.log(getWeapons3());
+      console.log(getSorceries3());
     }
 
-    console.log(getWeapons2());
+    console.log(getSorceries2());
   }
 
-  console.log(getWeapons1());
-  getWeapons(weaponsArray);
+  console.log(getSorceries1());
+  getSorceries(sorceriesArray);
 }
 
-console.log(getWeapons0());
+console.log(getSorceries0());
 
 filterSelection("all");
 function filterSelection(c) {

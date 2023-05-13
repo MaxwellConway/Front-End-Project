@@ -1,15 +1,15 @@
-async function getWeapons0() {
-  const weapons = await fetch(
-    "https://eldenring.fanapis.com/api/weapons?limit=100&page=0",
+async function getIncantations0() {
+  const incantations = await fetch(
+    "https://eldenring.fanapis.com/api/incantations?limit=100&page=0",
     {
       method: "GET",
     }
   );
 
-  const json = await weapons.json();
-  const weaponsArray = json.data;
+  const json = await incantations.json();
+  const incantationsArray = json.data;
 
-  function getWeapons(array) {
+  function getIncantations(array) {
     for (let i = 0; i < array.length; i++) {
       const nameData = array[i].name.replace(" ", "+");
       let weaponUrl = document.createElement("a");
@@ -22,9 +22,15 @@ async function getWeapons0() {
 
       let weaponImg = document.createElement("img");
       weaponImg.src = array[i].image;
+      if (weaponImg && weaponImg.style) {
+        weaponImg.style.height = "200px";
+        weaponImg.style.width = "200px";
+      }
       itemContainer.append(weaponImg);
       let weaponName = document.createElement("p");
       weaponName.className = "itemLabel";
+      weaponName.style.height = "200px";
+      weaponName.style.width = "200px";
 
       weaponName = array[i].name;
       itemContainer.append(weaponName);
@@ -32,18 +38,18 @@ async function getWeapons0() {
       weaponUrl.append(itemContainer);
     }
   }
-  async function getWeapons1() {
-    const weapons = await fetch(
-      "https://eldenring.fanapis.com/api/weapons?limit=100&page=1",
+  async function getIncantations1() {
+    const incantations = await fetch(
+      "https://eldenring.fanapis.com/api/incantations?limit=100&page=1",
       {
         method: "GET",
       }
     );
 
-    const json = await weapons.json();
-    const weaponsArray = json.data;
+    const json = await incantations.json();
+    const incantationsArray = json.data;
 
-    function getWeapons(array) {
+    function getIncantations(array) {
       for (let i = 0; i < array.length; i++) {
         const nameData = array[i].name.replace(" ", "+");
         let weaponUrl = document.createElement("a");
@@ -66,19 +72,19 @@ async function getWeapons0() {
         weaponUrl.append(itemContainer);
       }
     }
-    getWeapons(weaponsArray);
-    async function getWeapons2() {
-      const weapons = await fetch(
-        "https://eldenring.fanapis.com/api/weapons?limit=100&page=2",
+    getIncantations(incantationsArray);
+    async function getIncantations2() {
+      const incantations = await fetch(
+        "https://eldenring.fanapis.com/api/incantations?limit=100&page=2",
         {
           method: "GET",
         }
       );
 
-      const json = await weapons.json();
-      const weaponsArray = json.data;
+      const json = await incantations.json();
+      const incantationsArray = json.data;
 
-      function getWeapons(array) {
+      function getIncantations(array) {
         for (let i = 0; i < array.length; i++) {
           const nameData = array[i].name.replace(" ", "+");
           let weaponUrl = document.createElement("a");
@@ -101,19 +107,19 @@ async function getWeapons0() {
           weaponUrl.append(itemContainer);
         }
       }
-      getWeapons(weaponsArray);
-      async function getWeapons3() {
-        const weapons = await fetch(
-          "https://eldenring.fanapis.com/api/weapons?limit=100&page=3",
+      getIncantations(incantationsArray);
+      async function getIncantations3() {
+        const incantations = await fetch(
+          "https://eldenring.fanapis.com/api/incantations?limit=100&page=3",
           {
             method: "GET",
           }
         );
 
-        const json = await weapons.json();
-        const weaponsArray = json.data;
+        const json = await incantations.json();
+        const incantationsArray = json.data;
 
-        function getWeapons(array) {
+        function getIncantations(array) {
           for (let i = 0; i < array.length; i++) {
             const nameData = array[i].name.replace(" ", "+");
             let weaponUrl = document.createElement("a");
@@ -136,7 +142,7 @@ async function getWeapons0() {
             weaponUrl.append(itemContainer);
           }
         }
-        getWeapons(weaponsArray);
+        getIncantations(incantationsArray);
 
         function click() {
           document.getElementById("showAll").click();
@@ -145,17 +151,19 @@ async function getWeapons0() {
         click();
       }
 
-      console.log(getWeapons3());
+      console.log(getIncantations3());
     }
 
-    console.log(getWeapons2());
+    console.log(getIncantations2());
   }
 
-  console.log(getWeapons1());
-  getWeapons(weaponsArray);
+  console.log(getIncantations1());
+  getIncantations(incantationsArray);
 }
 
-console.log(getWeapons0());
+console.log(getIncantations0());
+
+// Button filter functions
 
 filterSelection("all");
 function filterSelection(c) {

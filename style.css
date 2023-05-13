@@ -1,24 +1,66 @@
+.body {
+  background-color: #353535;
+}
+
+.thumbnailBox {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  height: max-content;
+  width: 100%;
+  position: relative;
+}
+
+.homeThumbnail {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  justify-content: center;
+}
+
 .homeHeader {
   text-align: center;
   font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  padding-bottom: 20px;
+}
+.homepage {
+  background-color: #353535;
 }
 
 .flex-container {
   padding: 5px;
   height: 100%;
-  border: 4px solid red;
+  width: 100%;
+  border: 0px solid red;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #353535;
   flex-wrap: wrap;
-  gap: 150px;
+  gap: 90px;
+  justify-content: space-around;
+}
+
+a {
+  color: pink;
+}
+
+.caption {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .itemContainer {
-  padding: 5px;
-  border: 0px solid red;
+  padding: 20px;
+  border: 1px solid #454553;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center;
+  margin: auto;
+  width: 300px;
+
   flex-wrap: wrap;
   gap: 30px;
 }
@@ -37,7 +79,7 @@
 
 .filterDiv {
   float: left;
-  background-color: #2196f3;
+  background-color: #353535;
   color: #ffffff;
   line-height: 100px;
   text-align: center;
