@@ -29,8 +29,6 @@ async function getIncantations0() {
       itemContainer.append(weaponImg);
       let weaponName = document.createElement("p");
       weaponName.className = "itemLabel";
-      weaponName.style.height = "200px";
-      weaponName.style.width = "200px";
 
       weaponName = array[i].name;
       itemContainer.append(weaponName);

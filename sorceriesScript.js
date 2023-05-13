@@ -22,6 +22,10 @@ async function getSorceries0() {
 
       let weaponImg = document.createElement("img");
       weaponImg.src = array[i].image;
+      if (weaponImg && weaponImg.style) {
+        weaponImg.style.height = "200px";
+        weaponImg.style.width = "200px";
+      }
       itemContainer.append(weaponImg);
       let weaponName = document.createElement("p");
       weaponName.className = "itemLabel";
