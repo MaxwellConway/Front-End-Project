@@ -44,6 +44,11 @@
 
 a {
   color: pink;
+  text-decoration: none;
+}
+
+.itemContainer:hover {
+  background-color: #454553;
 }
 
 .caption {
@@ -60,7 +65,7 @@ a {
   justify-content: center;
   margin: auto;
   width: 300px;
-
+  height: 300px;
   flex-wrap: wrap;
   gap: 30px;
 }
