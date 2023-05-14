@@ -1,5 +1,7 @@
 .body {
   background-color: #353535;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .thumbnailBox {
