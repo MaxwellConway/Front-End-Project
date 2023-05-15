@@ -2,10 +2,7 @@
   background-color: #353535;
   overflow-x: hidden;
   max-width: 100%;
-}
-
-html {
-  scrollbar-gutter: stable both-edges;
+  justify-content: center;
 }
 
 .thumbnailBox {
@@ -23,8 +20,18 @@ html {
   justify-content: center;
 }
 
+.homeThumbnail.hover {
+  background-color: #454553;
+}
+
 .homeThumbnailContainer {
   padding: 20px;
+  border: 1px solid #454553;
+  border-radius: 20px;
+}
+
+.homeThumbnailContainer.hover {
+  background-color: #454553;
 }
 
 .homeHeader {
@@ -34,8 +41,10 @@ html {
   color: white;
   padding-bottom: 20px;
   width: 100%;
-  padding: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   justify-content: space-around;
+  background: radial-gradient(farthest-side, #232323, #353535);
 }
 .homepage {
   background-color: #353535;
@@ -143,12 +152,13 @@ a {
 .header {
   overflow: hidden;
   background-color: #f1f1f100;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Style the header links */
 .header a {
   float: left;
-  color: black;
+  color: white;
   text-align: center;
   padding: 12px;
   text-decoration: none;
