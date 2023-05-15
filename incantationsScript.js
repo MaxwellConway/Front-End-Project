@@ -15,7 +15,7 @@ async function getIncantations0() {
       let weaponUrl = document.createElement("a");
       weaponUrl.href = `https://eldenring.wiki.fextralife.com/${nameData}`;
       thumbnailBox.append(weaponUrl);
-      weaponUrl.className = `filterDiv ${array[i].category}`;
+      weaponUrl.className = `filterDiv ${array[i].description}`;
 
       const itemContainer = document.createElement("container");
       itemContainer.className = "itemContainer";
